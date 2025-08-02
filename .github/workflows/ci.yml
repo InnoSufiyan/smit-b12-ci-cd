@@ -38,7 +38,8 @@ jobs:
         run: |
           ssh -i private-key.pem -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} <<EOF
             docker pull innosufiyan/ci-cd
-            docker stop innosufiyan/ci-cd || true
-            docker rm innosufiyan/ci-cd || true
-            docker run -d --innosufiyan/ci-cd -p 3000:3000  innosufiyan/ci-cd
+            docker stop ci-cd || true
+            docker rm ci-cd || true
+            docker run -d --name ci-cd -p 3000:3000 innosufiyan/ci-cd
+
           EOF
