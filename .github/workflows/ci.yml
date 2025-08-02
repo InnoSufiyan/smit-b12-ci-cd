@@ -37,8 +37,8 @@ jobs:
       - name: Deploy Docker image to EC2
         run: |
           ssh -i private-key.pem -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} <<EOF
-            docker pull your-docker-username/your-image-name
-            docker stop your-container-name || true
-            docker rm your-container-name || true
-            docker run -d --name your-container-name -p 80:80 your-docker-username/your-image-name
+            docker pull innosufiyan/ci-cd
+            docker stop innosufiyan/ci-cd || true
+            docker rm innosufiyan/ci-cd || true
+            docker run -d --innosufiyan/ci-cd -p 3000:3000  innosufiyan/ci-cd
           EOF
