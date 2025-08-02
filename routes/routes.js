@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/about", (req, res) => {
-    res.send("Hello World from about dadsadasad");
+    res.send("Hello World from SMIT-B12");
 });
 
 router.get("/contact", (req, res) => {
