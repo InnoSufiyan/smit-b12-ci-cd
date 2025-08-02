@@ -24,8 +24,8 @@ jobs:
 
       - name: Build and push Docker image to Docker Hub
         run: |
-          docker build -t your-docker-username/your-image-name .
-          docker push your-docker-username/your-image-name
+          docker build -t innosufiyan/ci-cd .
+          docker push innosufiyan/ci-cd
 
       - name: Set up SSH key for EC2 access
         run: echo "${{ secrets.EC2_SSH_KEY }}" | base64 --decode > private-key.pem
